@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(16, 161, 174);
+}
+
+fieldset {
+  margin: 2em 0;
+  padding: 1em 2em;
+  border: solid 2px rgb(255, 255, 255);
+  border-radius: 6px;
+  width: 200px;
+}
+
+legend {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  padding: 0 0.5em;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  color: white;
+  font-weight: 550;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+}
+
+.checks label {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+input[type="reset"],
+select {
+  width: 100%;
+  border-color: white;
+  border-radius: 0.5em;
+  height: 30px;
+  margin-top: 0.5em;
+}
+
+textarea {
+  min-height: 10em;
+  min-width: 30em;
+  padding: 2em;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+input[type="submit"],
+input[type="reset"] {
+  margin-top: 1em;
+}
+
+p {
+  color: yellow;
+  font-weight: bolder;
+  font-size: small;
+}

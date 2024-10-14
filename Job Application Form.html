@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="form.css" />
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form
+        action=""
+        method="GET"
+        autocomplete="on"
+        id="job-application-form"
+        novalidate
+      >
+        <fieldset>
+          <legend>Job Application Form</legend>
+          <label for="fullname">Name:</label>
+          <input
+            id="name"
+            type="text"
+            name="fullname"
+            placeholder="Ahmad Jamal"
+            maxlength="30"
+            required
+          />
+          <p id="username-error"></p>
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email@example.com"
+            required
+          />
+          <p id="email-error"></p>
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="example: 9627xxxxxxxx"
+            required
+          />
+          <p id="phone-error"></p>
+
+          <label for="LinkedIn">LinkedIn Profile URL</label>
+          <input
+            id="link"
+            type="url"
+            name="LinkedIn"
+            maxlength="100"
+            placeholder="user@linkedin"
+            required
+          />
+          <p id="link-error"></p>
+
+          <label for="position">Position Applied For:</label>
+          <select id="position" name="position">
+            <option value="" disabled selected>Select a position</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="fullstack">Full Stack Developer</option>
+          </select>
+          <p id="position-error"></p>
+
+          <label for="Experience">Experience Level:</label>
+
+          <label for="junior">
+            <input type="radio" id="junior" name="experience" value="junior" />
+            Junior
+          </label>
+
+          <label for="mid">
+            <input type="radio" id="mid" name="experience" value="mid" />
+            Mid-level
+          </label>
+
+          <label for="senior">
+            <input type="radio" id="senior" name="experience" value="senior" />
+            Senior
+          </label>
+          <p id="experience-error"></p>
+
+          <label>Programming Skills: (select 1 to 5)</label>
+
+          <label for="html">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="html"
+              value="HTML"
+            />
+            HTML
+          </label>
+
+          <label for="css">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="css"
+              value="CSS"
+            />
+            CSS
+          </label>
+
+          <label for="javascript">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="javascript"
+              value="JavaScript"
+            />
+            JavaScript
+          </label>
+
+          <label for="python">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="python"
+              value="Python"
+            />
+            Python
+          </label>
+
+          <label for="java">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="java"
+              value="java"
+            />
+
+            Java</label
+          >
+
+          <label for="flutter"
+            ><input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="flutter"
+              value="flutter"
+            />Flutter</label
+          >
+
+          <label for="kotlin"
+            ><input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id="kotlin"
+              value="kotlin"
+            />Kotlin</label
+          >
+
+          <label for=".NET">
+            <input
+              type="checkbox"
+              name="ProgrammingSkills"
+              id=".NET"
+              value=".NET"
+            />
+            .NET
+          </label>
+          <p id="select-errormsg"></p>
+
+          <label for="coverletter">Cover Letter:</label>
+          <br />
+          <textarea
+            id="coverletter"
+            name="coverletter"
+            placeholder="Write your cover letter here..."
+            maxlength="500"
+          ></textarea>
+          <p id="wordcounter-error"></p>
+
+          <label for="startdate">Availability Start Date:</label>
+          <input type="date" id="startdate" name="startsate" />
+          <p id="date-error"></p>
+
+          <label for="resume">Upload Resume (PDF, DOC, DOCX):</label>
+          <input
+            type="file"
+            id="resume"
+            name="resume"
+            accept=".pdf , .doc, .docs"
+          />
+          <p id="resume-error"></p>
+
+          <label>
+            <input type="checkbox" id="terms" name="terms" />
+            I agree to the Terms and Conditions
+          </label>
+          <p id="terms-error"></p>
+        </fieldset>
+        <input type="submit" value="Submit" id="submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+  </body>
+</html>
