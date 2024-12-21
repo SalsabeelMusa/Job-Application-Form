@@ -1,54 +1,67 @@
+// Export the functions
+module.exports = {
+  validateName,
+  validateEmail,
+  validateTerms,
+  validateResume,
+  validateDate,
+  validCoverletter,
+};
+
 //validate username (Required)
 function validateName() {
-  const givenname = document.getElementById("name");
-  const errormsg = document.getElementById("username-error");
-  if (!givenname.value.trim()) {
-    errormsg.innerText = "This field is required!";
+  const nameField = document.getElementById("name");
+  const errorField = document.getElementById("username-error");
+  const value = nameField.value.trim();
+
+  if (!value) {
+    errorField.innerText = "This field is required!";
     return false;
-  } else {
-    errormsg.innerText = "";
-    return true;
   }
+
+  errorField.innerText = "";
+  return true;
 }
+
 // Validate email format & (Required)
 function validateEmail() {
-  const givenEmail = document.getElementById("email");
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const errormsg = document.getElementById("email-error");
-  givenEmail.setCustomValidity("");
-  errormsg.textContent = "";
-  // Check if the field is empty
-  if (!givenEmail.value.trim()) {
-    errormsg.innerText = "This field is required!";
+  const emailField = document.getElementById("email");
+  const errorField = document.getElementById("email-error");
+  const value = emailField.value.trim();
+  const emailRegex = /^[a-z0-9._%+-]+@cit\.just\.edu\.jo$/i;
+  if (!value) {
+    errorField.innerText = "This field is required!";
     return false;
-  } else errormsg.innerText = "";
-
-  // Check the email format
-  if (!emailRegex.test(givenEmail.value)) {
-    errormsg.innerText = "Please enter a valid email";
-    return false;
-  } else {
-    errormsg.innerText = "";
-    return true;
   }
+
+  if (!emailRegex.test(value)) {
+    errorField.innerText = "Please enter a valid email";
+    return false;
+  }
+
+  errorField.innerText = "";
+  return true;
 }
+
 // Validate phone number format (Jordanian numbers)  && (Required)
 function validatePhoneNumber() {
-  const givenPhone = document.getElementById("phone");
-  const phoneRegex = /^962[0-9]{9}$/;
-  const errormsg = document.getElementById("phone-error");
+  const phoneField = document.getElementById("phone");
+  const errorField = document.getElementById("phone-error");
+  const value = phoneField.value.trim();
+  const phoneRegex = /^962\d{7,9}$/;
 
-  if (!givenPhone.value.trim()) {
-    errormsg.innerText = "This field is required!";
+  if (!value) {
+    errorField.innerText = "This field is required!";
     return false;
-  } else errormsg.innerText = "";
-  if (!phoneRegex.test(givenPhone.value)) {
-    errormsg.innerText = "Please enter a valid number starting with 962";
-    return false;
-  } else {
-    errormsg.innerText = "";
-    return true;
   }
+
+  if (!phoneRegex.test(value)) {
+    errorField.innerText = "Please enter a valid number starting with 962";
+    return false;
+  }
+
+  errorField.innerText = "";
+  return true;
 }
 
 //validate linked-in if empty
@@ -128,16 +141,21 @@ function validCoverletter() {
 // Ensure start date is not before today
 function validateDate() {
   const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reset time to 00:00:00 to compare by date only
+
   const date = document.getElementById("startdate");
   const selectedDate = new Date(date.value);
+  selectedDate.setHours(0, 0, 0, 0); // Reset selected date's time to 00:00:00
+
   const errormsg = document.getElementById("date-error");
 
   if (!date.value) {
     errormsg.innerText = "Please select a date!";
     return false;
   } else errormsg.innerText = "";
+
   if (selectedDate < today) {
-    errormsg.innerText = "The start date cannot be in the past !!";
+    errormsg.innerText = "The start date cannot be in the past!";
     return false;
   } else {
     errormsg.innerText = "";
